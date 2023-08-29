@@ -1,0 +1,23 @@
+package Arrays;
+public class ReversingArray {
+    public static void main(String[] args){
+        int arr[] = {13,9,10,16,3,2,0};
+        RevesedArray(arr,0,arr.length-1);
+        printReversed(arr);
+    }
+    static void RevesedArray(int arr[],int i,int j){
+                while(i<j){
+                int temp = arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                i++;
+                j--;
+            }
+    }
+    static void printReversed(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+    
+}
