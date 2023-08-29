@@ -1,0 +1,53 @@
+package Arrays;
+import java.util.*;
+
+class Pair {
+    public int min;
+    public int max;
+}
+
+ public class ArrayMaxMin {                                                                     //by sorting
+     static Pair minNmax(int arr[]){
+         Pair minmax = new Pair();
+        Arrays.sort(arr);
+         minmax.min = arr[0];
+         minmax.max = arr[arr.length-1];
+         return minmax;
+     }
+     public static void main(String[] args){
+         int arr[] = {13,9,10,16,3,2,0};
+         Pair minmax = minNmax(arr);
+        System.out.println("Minimum element is " + minmax.min);
+         System.out.println("Maximum element is " + minmax.max);
+
+     }
+ }
+
+public class ArrayMaxMin {                                                                     //by Linear search
+    static Pair minNmax(int arr[]){
+        Pair minmax = new Pair();
+        if(arr.length==1){
+            minmax.min=arr[0];
+            minmax.max=arr[0];
+        }
+        minmax.min=arr[0];
+        minmax.max=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>minmax.max)
+            minmax.max=arr[i];
+            else if(arr[i]<minmax.min){
+                minmax.min=arr[i];
+            }
+        }
+       return minmax; 
+    }
+    public static void main(String[] args){
+        int arr[] = {13,9,10,16,3,2,0};
+        Pair minmax = minNmax(arr);
+        System.out.println("Minimum element is " + minmax.min);
+        System.out.println("Maximum element is " + minmax.max);
+
+    }
+
+    
+}
